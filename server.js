@@ -3,13 +3,13 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import { PeerServer } from "peer";
+import { MONGO_CONNECTION_URL } from "./constants";
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const MONGO_URI =
-  "mongodb+srv://karthiksriram682_db_user:lo9zSn551mf4NiBX@cluster0.gdmrs41.mongodb.net/peerchat?retryWrites=true&w=majority&tls=true";
+const MONGO_URI = MONGO_CONNECTION_URL;
 
 mongoose
   .connect(MONGO_URI)
